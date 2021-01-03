@@ -8,3 +8,5 @@ In this template, you can expect to find the code for:
 - A sample multi-column tables with some columns merged
 - References as footnotes in the same slide
 - References compiled in the final slide
+
+View this file directly on Overleaf: https://www.overleaf.com/read/dgjwdwbqnjsb
