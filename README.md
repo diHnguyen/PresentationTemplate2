@@ -10,3 +10,7 @@ In this template, you can expect to find the code for:
 - References compiled in the final slide
 
 View this file directly on Overleaf: https://www.overleaf.com/read/dgjwdwbqnjsb
+
+More presentation templates:
+https://github.com/diHnguyen/PresentationTemplate
+https://github.com/diHnguyen/PresentationTemplate3
