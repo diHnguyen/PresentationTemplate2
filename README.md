@@ -1,4 +1,4 @@
-# OR Presentation Template (Red)
+# OR Presentation Template 2 (Red)
 
 A special thanks to Mustafa C. Camur for sharing this template.
 
