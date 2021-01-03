@@ -1,0 +1,175 @@
+\documentclass{beamer} 
+\usetheme{CambridgeUS}
+\usepackage[latin1]{inputenc}
+\usefonttheme{professionalfonts}
+\usepackage{adjustbox}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[font=small,skip=0pt]{caption}
+\usepackage[figuresright]{rotating}
+\usepackage[style=verbose]{biblatex}
+\usepackage{mathtools}
+\usepackage{booktabs, makecell, siunitx} 
+\usepackage{paracol}
+\newcommand\cnot[1]{%
+  \mathrel{\ooalign{\hfil$#1$\hfil\cr\hfil$/$\hfil\cr}}}
+\renewcommand{\endproof}{\strut\hfill\Halmos\endTrivlist\addvspace{0pt}}
+\renewcommand{\footnotesize}{\fontsize{7pt}{8pt}\selectfont}
+\DeclareMathOperator*{\minimize}{minimize}
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{0.2cm}}
+\makeatother
+\bibliography{References}
+\usecolortheme{beaver}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{pdfpages}
+\usepackage{tabularx}
+\newtheorem{proposition}{Proposition}
+\setbeamercolor{footnote}{fg=red}
+\setbeamercolor{footnote mark}{fg=red}
+\setbeamercolor{footcite}{fg=red}
+\setbeamerfont{bibliography item}{size=\footnotesize}
+\setbeamerfont{bibliography entry author}{size=\footnotesize}
+\setbeamerfont{bibliography entry title}{size=\footnotesize}
+\setbeamerfont{bibliography entry location}{size=\footnotesize}
+\setbeamerfont{bibliography entry note}{size=\footnotesize}
+\usepackage{tikz}
+\newcommand{\stargraph}[2]{\begin{tikzpicture}
+    \node[circle,fill=black] at (360:0mm) (center) {};
+    \foreach \n in {1,...,#1}{
+        \node[circle,fill=black] at ({\n*360/#1}:#2cm) (n\n) {};
+        \draw (center)--(n\n);
+        \node at (0,-#2*1.5) {$K_{1,#1}$}; % delete line to remove label
+    }
+\end{tikzpicture}}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered] %Definitely need this if you want figures and tables to be numbered
+
+\setbeamercolor{itemize item}{fg=darkred}
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{footline}
+    {\begin{beamercolorbox}[sep=1ex]{author in head/foot}
+      \rlap{\textit{\insertshorttitle}}\hfill\insertauthor\hfill\llap{\insertframenumber}%
+      \end{beamercolorbox}%
+}
+\title[Template2]{Presentation Template \\ Owner: Mustafa C. Camur}
+\author[LastName1, LastName2, LastName3]{Name1 \inst{1}, Name2 \inst{1}, Name3 \inst{2}}
+
+\institute{\inst{1} Institution1 \and %
+\inst{2} Institution2}
+
+\date{\today}
+% Mustafa C. Camur
+\setbeamertemplate{itemize items}{\checkmark}
+\AtBeginEnvironment{definition}{%
+    \setbeamercolor{block title}{fg=black, bg= darkred!10}%
+  \setbeamercolor{block body}{fg=black,bg=darkred!20}
+}
+\AtBeginEnvironment{lemma}{%
+    \setbeamercolor{block title}{fg=black, bg= darkred!10}%
+  \setbeamercolor{block body}{fg=black,bg=darkred!20}
+}
+\AtBeginEnvironment{theorem}{%
+    \setbeamercolor{block title}{fg=black, bg= darkred!10}%
+  \setbeamercolor{block body}{fg=black,bg=darkred!20}
+}
+\AtBeginEnvironment{proposition}{%
+    \setbeamercolor{block title}{fg=black, bg= darkred!10}%
+  \setbeamercolor{block body}{fg=black,bg=darkred!20}
+}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+ 
+ \begin{frame}
+ \setbeamercolor{section number projected}{fg=black,bg=darkred}
+    \tableofcontents
+\end{frame}
+ \section{Slide Animation [Clickable Title]}
+ \iffalse
+\begin{frame}{Star}
+   \begin{definition}
+   \textbf{Star} is a complete bipartite graph (i.e., biclique) $K_{1,k}$; with one center node and $k$ leaves. 
+   \end{definition}
+\begin{figure}[htp]
+  \stargraph{3}{1} \hfill
+  \stargraph{4}{1} \hfill
+  \stargraph{5}{1} \hfill
+   \stargraph{6}{1} 
+\end{figure}
+\end{frame}
+\fi 
+
+\begin{frame}{Slide Animation}
+   \begin{definition}
+   Show Idea 1 first...
+   \end{definition}
+   \pause
+   \begin{definition}
+   Then show Idea 2 next.
+   \end{definition}
+\end{frame}
+
+
+\section{Our Contribution [Clickable Title]}
+\setbeamercolor{bibliography item}{parent=palette primary}
+\setbeamercolor*{bibliography entry author}{parent=palette primary}
+\setbeamercolor*{bibliography entry location}{parent=palette primary}
+\setbeamercolor*{bibliography entry note}{parent=palette primary}
+\begin{frame}{Our Contribution - Attach a reference to footnote \tiny\footcite{camur}}
+
+\end{frame}
+
+
+\section{Computational Experiments [Clickable Title]}
+\begin{frame}
+\frametitle{Computational Experiments}
+
+ \begin{table} %[htbp]
+\setlength{\tabcolsep}{3pt}
+% \renewcommand{\cellset}{\bfseries\linespread{0.0}\selectfont}
+% \renewcommand\cellalign{bc}
+  \centering
+%   \TABLE{The computational results for Staphylococcus Aureus $ \bm{( \text{n} = 2,852)}$ \label{table8}}{
+    \adjustbox{scale=0.8}{
+    %  \footnotesize
+     \begin{tabular}{
+    %  \linewidth}{@{\extracolsep{\fill}} 
+                        *{3}{c}
+                        *{4}{c c c c}}
+     \toprule
+    &   & \multicolumn{3}{c}{\protect [A]}   & \multicolumn{3}{c}{\protect [B]}           
+        & \multicolumn{3}{c}{[C]}   & \multicolumn{3}{c}{[D]}   \\
+    \cmidrule(lr){3-5}\cmidrule(l){6-8}\cmidrule(l){9-11}\cmidrule(l){12-14}
+{$\boldmath\kappa$} 
+      & {$\bf{m}$}                    & {\makecell{Time\\ (sec)}} 
+    & {\makecell{Gap\\ ($\%$)}} & {\makecell{BB\\ Nodes}}   
+    & {\makecell{Time\\ (sec)}} & {\makecell{Gap\\ ($\%$)}} & {\makecell{BB\\ Nodes}} 
+        & {\makecell{Time\\ (sec)}} & {\makecell{Gap\\ ($\%$)}} 
+    & {\makecell{BB\\ Nodes}}         & {\makecell{Time\\ (sec)}} 
+    & {\makecell{Gap\\ ($\%$)}} & {\makecell{BB\\ Nodes}}       \\
+    \midrule
+500& 21549&65.18&0&415&89.39&0&621&94.19&0&0&\textbf{45.34}&\textbf{0}&\textbf{43}\\
+    \bottomrule
+    \end{tabular}}
+    \caption{Table Title}\label{table_1}
+    % }{}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{References - Cite all references}
+\setbeamercolor{bibliography item}{parent=palette primary}
+\setbeamercolor*{bibliography entry author}{parent=palette primary}
+\setbeamercolor*{bibliography entry location}{parent=palette primary}
+\setbeamercolor*{bibliography entry note}{parent=palette primary}
+\printbibliography
+
+\end{frame}
+
+\end{document}
